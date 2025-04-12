@@ -102,3 +102,101 @@ Copy any API above to "apis" in Edit Widget to active the API function
     "vss_json": "https://bewebstudio.digitalauto.tech/data/projects/sHQtNwric0H7/vss_rel_4.1.json"
 }
 ///
+
+
+# Unity 2022.3.7f1 Setup Guide with WebGL Build
+
+## ✅ Requirements
+
+- Unity Hub (latest version)
+- Unity Editor version **2022.3.7f1**
+- WebGL Build Support Module
+
+---
+
+## 📥 Step 1: Install Unity Hub
+
+1. Download Unity Hub from the official site: [https://unity.com/download](https://unity.com/download)
+2. Install and open Unity Hub.
+
+---
+
+## 🧱 Step 2: Install Unity 2022.3.7f1
+
+1. Open Unity Hub and go to the **Installs** tab.
+2. Click **"Install Editor"**, then go to the **"Archive"** section.
+3. Find and download the version [Unity 2022.3.7f1](https://unity.com/releases/editor/qa/lts-releases).
+4. Download the **.unityhub** install file and open it to install via Unity Hub.
+
+> ✅ **Make sure to select “WebGL Build Support” during installation.**
+
+If you've already installed Unity without WebGL:
+- Go to **Installs** tab → click **⋮** next to version 2022.3.7f1 → select **"Add Modules"** → install **WebGL Build Support**.
+
+---
+
+## 🎮 Step 3: Create a New Unity Project
+
+1. Go to the **Projects** tab → click **"New Project"**.
+2. Choose the **3D** template.
+3. Select version **2022.3.7f1**.
+4. Name your project and click **Create**.
+
+---
+
+## ⚙️ Step 4: Configure WebGL Build
+
+1. Open your project.
+2. Go to **File → Build Settings**.
+3. Select **WebGL** in the platform list → click **Switch Platform**.
+
+### Optional Player Settings:
+- Go to **Player Settings**:
+  - **Resolution and Presentation**:
+    - Set Canvas Width/Height as needed.
+    - Enable **Run In Background** if required.
+  - **Publishing Settings**:
+    - Set Compression Format to **Brotli** or **Gzip**.
+    - Enable **Decompression Fallback** for better compatibility.
+
+---
+
+## 🚀 Step 5: Build the Project
+
+1. Add your main scene in **Build Settings** → click **Add Open Scenes**.
+2. Click **Build**, then choose a folder (e.g., `Build/`) to export the WebGL files.
+
+> The output will include files like:
+## 🧪 Testing the Build
+
+To test the WebGL build locally, use a local server:
+
+### Option 1: Live Server (VS Code extension)
+- Install the **Live Server** extension.
+- Right-click `MainIndex.html` → **Open with Live Server**.
+
+## 🧱 Project Code Structure
+
+This project is a WebGL-based Unity application that controls a 3D car model. The car has various interactive features such as opening/closing doors, turning lights on/off, and adjusting seat positions. All functionalities are encapsulated and managed by a centralized controller.
+
+### 🏗 Code Architecture
+
+
+### 🔁 Flow Overview
+
+1. Individual car parts (door, seat, lights...) are modular scripts.
+2. `CarController` acts as the integration hub that references all parts.
+3. External HTML communicates with Unity WebGL through JavaScript API calls.
+4. Unity receives commands (as JSON or strings) and forwards them to the appropriate component.
+5. Each component implements a shared interface for consistent communication (`IActions`, `ILockable`, etc).
+
+### 🧩 Key Features
+
+- Modular component design for easy expansion.
+- Centralized command processing via `CarController`.
+- HTML integration for remote or UI-based control.
+- Interface-driven architecture for flexibility.
+
+---
+
+

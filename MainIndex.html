@@ -65,7 +65,7 @@ function callFromUnity(command, name, value) {
       }
 
       // Set the build version and define build paths dynamically
-      let versionBuilt = "widget-3d-car-viewer";
+      let versionBuilt = "widget-3d-car-unity";
       var projectName = `${versionBuilt}`
       var buildUrl = "Build";
       var loaderUrl = buildUrl + `/${projectName}.loader.js`;
@@ -149,6 +149,14 @@ function callFromUnity(command, name, value) {
           }
         },
         {
+          entity:'row1_door1',
+          optionsName:'door1_position',
+          api:'Vehicle.Cabin.Door.Row1.DriverSide.Position',
+          dataType:'uint8',
+          lastValue:undefined,
+          actionMaps:'position'
+        },
+        {
           entity: 'row1_door1',
           behaviour:"islocked",
           optionsName: 'door1_locked',
@@ -170,6 +178,14 @@ function callFromUnity(command, name, value) {
             "true": "true",
             "false": "false"
           }
+        },
+        {
+          entity:'row1_door2',
+          optionsName:'door2_position',
+          api:'Vehicle.Cabin.Door.Row1.PassengerSide.Position',
+          dataType:'uint8',
+          lastValue:0,
+          actionMaps:'position'
         },
         {
           entity: 'row1_door2',
@@ -320,23 +336,7 @@ function callFromUnity(command, name, value) {
             "true" : "turn_on_signal",
             "false": "turn_off_signal"
           }
-        },
-        {
-          entity:'seat1',
-          optionsName:'seat1_position',
-          api:'Vehicle.Cabin.Door.Row1.DriverSide.Position',
-          dataType:'uint8',
-          lastValue:0,
-          actionMaps:'seat_position'
-        },
-        {
-          entity:'seat2',
-          optionsName:'seat2_position',
-          api:'Vehicle.Cabin.Door.Row1.PassengerSide.Position',
-          dataType:'uint8',
-          lastValue:0,
-          actionMaps:'seat_position'
-        },
+        },     
         {
           entity:'seat2',
           optionsName: 'seat2_height',  //variable name to get API       
