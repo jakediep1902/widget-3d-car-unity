@@ -113,17 +113,35 @@ Vehicle.Body.Mirrors.PassengerSide.IsLocked
 
 
 # Instruction: 
-Copy any API above to "apis" in Edit Widget to active the API function
-```json
-{
-    "apis": [
-        "Vehicle.Body.Windshield.Rear.Wiping.Mode",             <---API need to active
-        "Vehicle.AverageSpeed",                                 <---API need to active
-        "Vehicle.Cabin.Seat.Row2.PassengerSide.Height"          <---API need to active
-    ],
-    "vss_json": "https://bewebstudio.digitalauto.tech/data/projects/sHQtNwric0H7/vss_rel_4.1.json"
-}
+For example:
+let OBJECT_MAPPING = [
+  {
+    // The name of the Unity object to be controlled
+    entity: 'row1_door1',
 
+    // Placeholder for additional behavior (e.g., "islocked" status check)
+    behaviour: "",
+
+    // The key or field name in the browser used to control this feature
+    optionsName: 'row1_door1_open',
+
+    // The default API path used to retrieve this object's state
+    api: 'Vehicle.Cabin.Door.Row1.Driver.IsOpen',
+
+    // The data type expected from the API or browser (in this case, true/false)
+    dataType: "boolean",
+
+    // Last known value to prevent unnecessary updates
+    lastValue: false,
+
+    // Maps the boolean value from browser or API to corresponding action in Unity
+    actionMaps: {
+      "true": "true",   // "true" from browser/API triggers Unity action "true"
+      "false": "false"  // "false" from browser/API triggers Unity action "false"
+    }
+  },
+  // ...
+];
 
 
 # Unity 2022.3.7f1 Setup Guide with WebGL Build
