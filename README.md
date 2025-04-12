@@ -114,6 +114,7 @@ Vehicle.Body.Mirrors.PassengerSide.IsLocked
 
 # Instruction: 
 For example:
+```js
 let OBJECT_MAPPING = [
   {
     // The name of the Unity object to be controlled
@@ -142,6 +143,7 @@ let OBJECT_MAPPING = [
   },
   // ...
 ];
+```
 
 
 # Unity 2022.3.7f1 Setup Guide with WebGL Build
