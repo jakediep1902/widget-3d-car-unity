@@ -327,6 +327,14 @@ function callFromUnity(command, name, value) {
           actionMaps: 'seat_height'                    
         },
         {
+          entity:'seat1',
+          optionsName:'seat1_position',
+          api:'Vehicle.Cabin.Seat.Row1.DriverSide.Position',
+          dataType:'uint8',
+          lastValue:0,
+          actionMaps:'seat_position'
+        },
+        {
           entity:'hazard_signaling',
           optionsName:'hazard_signaling',
           api:'Vehicle.Body.Lights.Hazard.IsSignaling',
@@ -336,7 +344,15 @@ function callFromUnity(command, name, value) {
             "true" : "turn_on_signal",
             "false": "turn_off_signal"
           }
-        },     
+        }, 
+        {
+          entity:'seat2',
+          optionsName:'seat2_position',
+          api:'Vehicle.Cabin.Seat.Row1.PassengerSide.Position',
+          dataType:'uint8',
+          lastValue:0,
+          actionMaps:'seat_position'
+        },    
         {
           entity:'seat2',
           optionsName: 'seat2_height',  //variable name to get API       

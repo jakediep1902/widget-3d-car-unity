@@ -43,7 +43,7 @@ function SetAPIFromUnity(name, value) {
                 setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.IsOpen', value);
                 break;
           case 'row1_door1_position':
-                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.Position', value);
+                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.Position', value);                       
                 break;
           case 'row1_door2':
                 setApiValue('Vehicle.Cabin.Door.Row1.PassengerSide.IsOpen', value); 
