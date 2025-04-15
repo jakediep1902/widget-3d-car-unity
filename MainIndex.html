@@ -684,6 +684,7 @@ function callFromUnity(command, name, value) {
             if(!obj.api) return         
             let newValue = getApiValue(obj.api)                                 
             if(newValue == undefined) return
+            console.log('value undefined ---------------------------------------------> return')
             if(newValue.value !== obj.lastValue) {         
               console.log(`Value changed for ${obj.entity}: ${obj.lastValue} -> ${newValue.value}`);
               if(obj.dataType == 'boolean') {
