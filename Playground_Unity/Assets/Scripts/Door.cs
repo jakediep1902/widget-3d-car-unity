@@ -24,12 +24,12 @@ public class Door : MonoBehaviour, IToggleable, IActions, ILockable
         Quaternion targetRotation = Quaternion.Euler(0, openAngle, 0);
         doorTransform.localRotation = Quaternion.Slerp(doorTransform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
-    
+
     // Method to toggle the door state
     public void OpenDoor()
     {
         if (isLocked) return;
-        SetAngleDoor("90");
+        SetAngleDoor("100");
     }
     public void CloseDoor()
     {
@@ -48,20 +48,23 @@ public class Door : MonoBehaviour, IToggleable, IActions, ILockable
         SetAngleDoor("0");
         isLocked = false;
     }
-    //public void IsOpenDoor(bool value)
-    //{
-    //    if (isLocked) return;
-    //    SetAngleDoor(value?"100":"0");
-    //}
+    public void IsOpenDoor(bool value)
+    {
+        if (isLocked) return;
+        SetAngleDoor(value ? "100" : "0");
+    }
 
     public void ActiveFunction(bool isActive)
-    {
-        //if (!isLocked)
-            //isOpen = isActive;
-        if(!isActive)
-        {
-            WebGLInteraction.SetValueAPIBrowser($"{gameObject.name}_position","0"); 
+    {   
+        if(!isActive) {
+            SetAngleDoor("0");
+            return;
         }
+
+        if (openAngle == 0) {
+            SetAngleDoor("100");
+        }
+        
     }
 
     public void ActiveFunctionsByAction(string actionName, string options)
@@ -74,7 +77,7 @@ public class Door : MonoBehaviour, IToggleable, IActions, ILockable
         }
     }
     public void SetAngleDoor(string angle)
-    {        
+    {
         if (float.TryParse(angle,out var result))
         {
             if (isLocked) return;
@@ -88,6 +91,7 @@ public class Door : MonoBehaviour, IToggleable, IActions, ILockable
             } 
             openAngle = result * maxAngle / 100f;
             WebGLInteraction.SendDataMessage(openAngle.ToString());
+            WebGLInteraction.SetValueAPIBrowser($"{gameObject.name}_position", angle);
         }
     }
 
