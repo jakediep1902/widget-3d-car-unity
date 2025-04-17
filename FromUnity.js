@@ -39,18 +39,6 @@ function SetAPIFromUnity(name, value) {
           case 'door_2':
                 setApiValue('', value);
                 break;
-          case 'row1_door1':
-                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.IsOpen', value);
-                break;
-          case 'row1_door1_position':
-                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.Position', value);                       
-                break;
-          case 'row1_door2':
-                setApiValue('Vehicle.Cabin.Door.Row1.PassengerSide.IsOpen', value); 
-                break;
-          case 'row1_door2_position':
-                setApiValue('Vehicle.Cabin.Door.Row1.PassengerSide.Position', value);
-                break;
           case 'row2_door3':
                 setApiValue('Vehicle.Cabin.Door.Row2.DriverSide.IsOpen', value);
                 break;
