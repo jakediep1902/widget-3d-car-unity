@@ -8,10 +8,7 @@ function ShowInfo(info)
 
 function SetAPIFromUnity(name, value) {
     console.log(`Unity request set component ${name} ------>  ${value}`)
-    switch (name) {  
-          case 'door1':
-              setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.IsOpen', value);            
-                break;
+    switch (name) {                                 
           case 'trunk_front':
                   setApiValue('Vehicle.Body.Trunk.Front.IsOpen', value);
                 break;
@@ -33,11 +30,17 @@ function SetAPIFromUnity(name, value) {
           case 'window_3':
                 setApiValue('Vehicle.Cabin.Door.Row2.DriverSide.Window.IsOpen', value);
                 break;
-          case 'door_1':
-                setApiValue('', value);
+          case 'row1_door1':
+                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.IsOpen', value);
                 break;
-          case 'door_2':
-                setApiValue('', value);
+          case 'row1_door1_position':
+                setApiValue('Vehicle.Cabin.Door.Row1.DriverSide.Position', value);                       
+                break;
+          case 'row1_door2':
+                setApiValue('Vehicle.Cabin.Door.Row1.PassengerSide.IsOpen', value); 
+                break;
+          case 'row1_door2_position':
+                setApiValue('Vehicle.Cabin.Door.Row1.PassengerSide.Position', value);
                 break;
           case 'row2_door3':
                 setApiValue('Vehicle.Cabin.Door.Row2.DriverSide.IsOpen', value);
