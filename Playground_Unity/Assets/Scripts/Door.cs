@@ -64,11 +64,19 @@ public class Door : MonoBehaviour, IToggleable, IActions, ILockable
     public void ActiveFunction(bool isActive)
     {
         if (!isLocked)
-            isOpen = isActive;
-        if(!isActive)
         {
-            WebGLInteraction.SetValueAPIBrowser($"{gameObject.name}_position","0"); 
+            isOpen = isActive;
+            if(isOpen)
+            {
+                openAngle = maxAngle;
+            }
+            else
+            {
+                openAngle = 0;
+            }
         }
+        var tempAngle = openAngle * 100 / maxAngle;
+        WebGLInteraction.SetValueAPIBrowser($"{gameObject.name}_position", tempAngle.ToString());
     }
 
     public void ActiveFunctionsByAction(string actionName, string options)
