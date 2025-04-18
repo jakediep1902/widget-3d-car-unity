@@ -8253,6 +8253,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924415421}
   m_Mesh: {fileID: 6689982343529409235, guid: ba28c3ab368eb7d4994d5bfbb2e4eb28, type: 3}
+--- !u!114 &1950905445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1480125123961626875, guid: e7b148313af649e4696cad572b8dce8b, type: 3}
+  m_PrefabInstance: {fileID: 1222295062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1596bafcd865e2c49aae2b4e7203457f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975552907
 GameObject:
   m_ObjectHideFlags: 0
@@ -14141,7 +14152,7 @@ MonoBehaviour:
   lastSpeed: 0
   acceleration: 0.008
   rollbackPos: {x: 0.04400003, y: 0.22, z: 0.59}
-  background: {fileID: 0}
+  background: {fileID: 1950905445}
   lightHazard:
   - {fileID: 5534516717284167168}
   lightBrake:
